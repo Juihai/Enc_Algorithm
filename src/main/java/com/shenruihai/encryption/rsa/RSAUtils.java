@@ -92,7 +92,7 @@ public class RSAUtils {
         byte[] inputByte = Base64.decodeBase64(str.getBytes("UTF-8"));
         //base64编码的私钥
         byte[] keyBytes = Base64.decodeBase64(privateKey);
-        RSAPrivateKey priKey = (RSAPrivateKey) KeyFactory.getInstance(ALGORITHM).generatePrivate(new PKCS8EncodedKeySpec(keyBytes));
+        PrivateKey priKey = KeyFactory.getInstance(ALGORITHM).generatePrivate(new PKCS8EncodedKeySpec(keyBytes));
         //RSA签名
         Signature signature = Signature.getInstance(RSASignatureEnum.MD5withRSA.toString());
         signature.initSign(priKey);
@@ -110,12 +110,12 @@ public class RSAUtils {
     public static boolean verify(String src, String publicKey, String sign) throws Exception {
         //base64编码的公钥
         byte[] keyBytes = Base64.decodeBase64(publicKey);
-        RSAPublicKey pubKey = (RSAPublicKey) KeyFactory.getInstance(ALGORITHM).generatePublic(new X509EncodedKeySpec(keyBytes));
+        PublicKey pubKey =  KeyFactory.getInstance(ALGORITHM).generatePublic(new X509EncodedKeySpec(keyBytes));
         //RSA验签
         Signature signature = Signature.getInstance(RSASignatureEnum.MD5withRSA.toString());
         signature.initVerify(pubKey);
-        signature.update(src.getBytes());
-        return signature.verify(Base64.decodeBase64(sign.getBytes()));
+        signature.update(src.getBytes("UTF-8"));
+        return signature.verify(Base64.decodeBase64(sign.getBytes("UTF-8")));
     }
 
 }

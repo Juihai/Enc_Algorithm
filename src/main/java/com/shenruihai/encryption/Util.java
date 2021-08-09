@@ -327,8 +327,7 @@ public class Util
     /**
      * 数字字符串转ASCII码字符串
      *
-     * @param String
-     *            字符串
+     * @param String 字符串
      * @return ASCII字符串
      */
     public static String StringToAsciiString(String content) {
@@ -345,10 +344,8 @@ public class Util
     /**
      * 十六进制转字符串
      *
-     * @param hexString
-     *            十六进制字符串
-     * @param encodeType
-     *            编码类型4：Unicode，2：普通编码
+     * @param hexString 十六进制字符串
+     * @param encodeType 编码类型4：Unicode，2：普通编码
      * @return 字符串
      */
     public static String hexStringToString(String hexString, int encodeType) {
@@ -365,8 +362,7 @@ public class Util
     /**
      * 十六进制字符串装十进制
      *
-     * @param hex
-     *            十六进制字符串
+     * @param hex 十六进制字符串
      * @return 十进制数值
      */
     public static int hexStringToAlgorism(String hex) {
@@ -389,8 +385,7 @@ public class Util
     /**
      * 十六转二进制
      *
-     * @param hex
-     *            十六进制字符串
+     * @param hex 十六进制字符串
      * @return 二进制字符串
      */
     public static String hexStringToBinary(String hex) {
@@ -456,8 +451,7 @@ public class Util
     /**
      * ASCII码字符串转数字字符串
      *
-     * @param String
-     *            ASCII字符串
+     * @param String ASCII字符串
      * @return 字符串
      */
     public static String AsciiStringToString(String content) {
@@ -476,10 +470,8 @@ public class Util
     /**
      * 将十进制转换为指定长度的十六进制字符串
      *
-     * @param algorism
-     *            int 十进制数字
-     * @param maxLength
-     *            int 转换后的十六进制字符串长度
+     * @param algorism int 十进制数字
+     * @param maxLength int 转换后的十六进制字符串长度
      * @return String 转换后的十六进制字符串
      */
     public static String algorismToHexString(int algorism, int maxLength) {
@@ -495,8 +487,7 @@ public class Util
     /**
      * 字节数组转为普通字符串（ASCII对应的字符）
      *
-     * @param bytearray
-     *            byte[]
+     * @param bytearray byte[]
      * @return String
      */
     public static String byteToString(byte[] bytearray) {
@@ -514,8 +505,7 @@ public class Util
     /**
      * 二进制字符串转十进制
      *
-     * @param binary
-     *            二进制字符串
+     * @param binary 二进制字符串
      * @return 十进制数值
      */
     public static int binaryToAlgorism(String binary) {
@@ -532,8 +522,7 @@ public class Util
     /**
      * 十进制转换为十六进制字符串
      *
-     * @param algorism
-     *            int 十进制的数字
+     * @param algorism  int 十进制的数字
      * @return String 对应的十六进制字符串
      */
     public static String algorismToHEXString(int algorism) {
@@ -552,10 +541,8 @@ public class Util
     /**
      * HEX字符串前补0，主要用于长度位数不足。
      *
-     * @param str
-     *            String 需要补充长度的十六进制字符串
-     * @param maxLength
-     *            int 补充后十六进制字符串的长度
+     * @param str String 需要补充长度的十六进制字符串
+     * @param maxLength int 补充后十六进制字符串的长度
      * @return 补充结果
      */
     static public String patchHexString(String str, int maxLength) {
@@ -570,12 +557,9 @@ public class Util
     /**
      * 将一个字符串转换为int
      *
-     * @param s
-     *            String 要转换的字符串
-     * @param defaultInt
-     *            int 如果出现异常,默认返回的数字
-     * @param radix
-     *            int 要转换的字符串是什么进制的,如16 8 10.
+     * @param s String 要转换的字符串
+     * @param defaultInt int 如果出现异常,默认返回的数字
+     * @param radix int 要转换的字符串是什么进制的,如16 8 10.
      * @return int 转换后的数字
      */
     public static int parseToInt(String s, int defaultInt, int radix) {
@@ -591,10 +575,8 @@ public class Util
     /**
      * 将一个十进制形式的数字字符串转换为int
      *
-     * @param s
-     *            String 要转换的字符串
-     * @param defaultInt
-     *            int 如果出现异常,默认返回的数字
+     * @param s String 要转换的字符串
+     * @param defaultInt int 如果出现异常,默认返回的数字
      * @return int 转换后的数字
      */
     public static int parseToInt(String s, int defaultInt) {
@@ -630,8 +612,7 @@ public class Util
     /**
      * 字节数组转换为十六进制字符串
      *
-     * @param b
-     *            byte[] 需要转换的字节数组
+     * @param b byte[] 需要转换的字节数组
      * @return String 十六进制字符串
      */
     public static String byteToHex(byte b[]) {
