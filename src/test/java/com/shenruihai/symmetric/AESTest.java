@@ -13,12 +13,13 @@ public class AESTest {
         // CBC模式,必须指定初始向量,初始向量中密钥的长度必须是16个字节
         // NoPadding模式,原文的长度必须是16个字节的整倍数
 //        String transformation = "AES";
-        String transformation = "AES/CBC/PKCS5Padding";
+
         // 指定获取密钥的算法
+        System.out.println("加密前："+ input);
         String algorithm = "AES";
-        String encryptAES = AESUtils.encrypt(input, key, transformation, algorithm);
+        String encryptAES = AESUtils.encrypt(input, key, algorithm);
         System.out.println("加密:" + encryptAES);
-        String s = AESUtils.decrypt(encryptAES, key, transformation, algorithm);
+        String s = AESUtils.decrypt(encryptAES, key, algorithm);
         System.out.println("解密:" + s);
 
     }

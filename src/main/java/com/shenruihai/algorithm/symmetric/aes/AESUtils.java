@@ -16,16 +16,18 @@ import javax.crypto.spec.SecretKeySpec;
  */
 public class AESUtils {
 
+    //获取Cipher对象的算法
+    private static String transformation = "AES/CBC/PKCS5Padding";
+
     /**
      * 加密
      * @param input  明文
      * @param key   密钥(AES,密钥的长度必须是16个字节)
-     * @param transformation  获取Cipher对象的算法
      * @param algorithm   获取密钥的算法
      * @return  返回密文
      * @throws Exception
      */
-    public static String encrypt(String input, String key, String transformation, String algorithm) throws Exception {
+    public static String encrypt(String input, String key, String algorithm) throws Exception {
         // 1,获取Cipher对象
         Cipher cipher = Cipher.getInstance(transformation);
         // 指定密钥规则
@@ -46,12 +48,11 @@ public class AESUtils {
      * 解密
      * @param input  密文
      * @param key   密钥(AES,密钥的长度必须是16个字节)
-     * @param transformation  获取Cipher对象的算法
      * @param algorithm   获取密钥的算法
      * @return 返回原文
      * @throws Exception
      */
-    public static String decrypt(String input, String key, String transformation, String algorithm) throws Exception {
+    public static String decrypt(String input, String key, String algorithm) throws Exception {
         Cipher cipher = Cipher.getInstance(transformation);
         SecretKeySpec sks = new SecretKeySpec(key.getBytes(), algorithm);
         IvParameterSpec iv = new IvParameterSpec(key.getBytes());
